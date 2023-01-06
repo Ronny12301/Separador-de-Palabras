@@ -23,15 +23,14 @@ public class DividirDiccionario {
 
             String linea;
             while ((linea = reader.readLine()) != null) {
-                if (linea.length()<=12) {
+                if (linea.length()<=12 && linea.length()>2) {  //wordament solo permite palabras de 3 a 12 letras
                     escribir(linea + "\n");
                 }
                 else {
-                    System.out.println(linea);  //palabras no incluidas por ser muy grandes
+                    System.out.println(linea);  //palabras no incluidas por ser muy grandes/chicas
                 }
             }
 
-            // Close all the FileWriters
             for (FileWriter writer : writers.values()) {
                 writer.close();
             }
